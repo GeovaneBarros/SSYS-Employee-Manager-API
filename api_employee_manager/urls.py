@@ -12,6 +12,6 @@ urlpatterns = [
     path('', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     path('admin/', admin.site.urls),
-    path('reports/employees/salary', salary_report),
-    path('reports/employees/age', age_report)
+    path('reports/employees/salary/', salary_report),
+    path('reports/employees/age/', age_report),
 ]
