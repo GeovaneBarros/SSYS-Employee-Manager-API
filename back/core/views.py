@@ -10,8 +10,8 @@ from statistics import mean
 from rest_framework.views import APIView
 
 class EmployeeViewSet(viewsets.ModelViewSet):
-    authentication_classes = [SessionAuthentication, BasicAuthentication, TokenAuthentication]
-    permission_classes = [IsAuthenticated]
+    authentication_classes = []
+    permission_classes = []
     queryset = Employee.objects.all()
     serializer_class = EmployeeSerializer
 
