@@ -8,10 +8,13 @@ from .serializers import EmployeeSerializer
 from datetime import date
 from statistics import mean
 from rest_framework.views import APIView
+from django_filters.rest_framework import DjangoFilterBackend
 
 class EmployeeViewSet(viewsets.ModelViewSet):
     authentication_classes = []
     permission_classes = []
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = ['name', 'birth_date']
     queryset = Employee.objects.all()
     serializer_class = EmployeeSerializer
 
