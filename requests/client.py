@@ -1,5 +1,7 @@
 from isigi import *
 
+print('Seja bem vindo ao sistema de cadastro de colaboradores')
+
 def show_options():
     print('__________________')
     print('cadastrar usuario')
