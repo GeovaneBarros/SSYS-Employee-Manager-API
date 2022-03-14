@@ -1,4 +1,7 @@
 from isigi import *
+
+print('Seja bem vindo ao sistema de cadastro de colaboradores')
+
 def show_menu():
     '''
         This function is used to show the list of operations available to the user.
