@@ -1,43 +1,49 @@
 from isigi import *
-
-def show_options():
+def show_menu():
+    '''
+        This function is used to show the list of operations available to the user.
+    '''
     print('__________________')
     print('cadastrar usuario')
     print('excluir usuario')
     print('atualizar usuario')
     print('__________________')
 
-def informacoes_usuario():
-    usuario = {
+def fill_user():
+    '''
+        This function is used to fill in the information of a new user
+    '''
+    user = {
         'name': input('Nome: '),
         'email': input('Email: '),
         'department': input('Departamento: '),
         'salary': input('Salário: '),
         'birth_date': input('Data nascimento (utilize formato YYYY-mm-dd): ')
     }
-    return usuario
+    return user
 
-lista_sistemas = ['api_employe', '99pop', 'uber']
+systems_list = ['api_employe', '99pop', 'uber']
+operation = ''
 
-op = ''
-while op != 'sair':
-    show_options()
-    op = input('Digite sua opção: ')
-    if op == 'cadastrar usuario':
-        usuario = informacoes_usuario()
-        cadastrar_usuario(usuario, lista_sistemas)
+while operation != 'sair':
+    show_menu()
+    operation = input('Digite sua opção: ')
+    
+    if operation == 'cadastrar usuario':
+        cadastrar_usuario(fill_user(), systems_list)
 
-    elif op == 'excluir usuario':
-        usuario = {
+    elif operation == 'excluir usuario':
+        user = {
         'name': input('Nome: '),
         'email': '',
         'departament': '',
         'salary': 0,
         'birth_date': input('Data nascimento (utilize o formato YYYY-mm-dd): ')
         }
-        excluir_usuario(usuario, lista_sistemas)
+        excluir_usuario(user, systems_list)
         
-    elif op == 'atualizar usuario':
-        usuario = informacoes_usuario()
+    elif operation == 'atualizar usuario':
+        
+        new_user = fill_user()
     else:
         print('Operação não cadastrada')
